@@ -3,18 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Проєкт КМІТ</title>
+<title>Мерч і обкладинки КМІТ</title>
 <style>
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #F6F5F0; color: #121826; font-family: system-ui, sans-serif; padding: 16px; }
-  main { max-width: 560px; text-align: center; }
-  h1 { font-size: 28px; }
-  p { color: #4A5263; line-height: 1.5; }
+  :root { --bg:#F7F5F0; --card:#FFFFFF; --ink:#16202E; --muted:#4F5866; --line:#E3DED3; --accent:#C25E00; --accent-bg:#FCEBD9; --blue:#2457C5; --blue-bg:#E6EEFB; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 16px; }
+  header { padding:28px 0 8px; }
+  .back { color:var(--blue); text-decoration:none; font-size:15px; }
+  .tag { display:inline-block; margin-top:16px; font-size:13px; font-weight:600; color:var(--accent); background:var(--accent-bg); padding:3px 10px; border-radius:999px; }
+  h1 { font-size:clamp(26px,5.5vw,36px); line-height:1.2; margin:10px 0 6px; }
+  .sub { color:var(--muted); margin:0; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; margin:20px 0; display:grid; grid-template-columns:1.25fr 1fr; }
+  .item.tall { grid-template-columns:minmax(0,0.8fr) 1fr; }
+  .item img { width:100%; height:100%; object-fit:cover; display:block; background:#EEE; }
+  .body { padding:18px 20px; display:flex; flex-direction:column; gap:8px; }
+  .body h2 { font-size:20px; margin:0; }
+  .meta { font-size:13px; color:var(--muted); }
+  .prompt { font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; background:#F3F1EA; border:1px solid var(--line); border-radius:10px; padding:10px 12px; white-space:pre-wrap; margin:0; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; margin-top:auto; }
+  .btn { font-size:14px; font-weight:600; color:var(--blue); background:var(--blue-bg); padding:6px 12px; border-radius:8px; text-decoration:none; border:0; cursor:pointer; font-family:inherit; }
+  .note { background:var(--accent-bg); border-radius:12px; padding:12px 16px; font-size:15px; margin:8px 0 0; }
+  footer { color:var(--muted); font-size:14px; padding:24px 0 40px; border-top:1px solid var(--line); margin-top:24px; }
+  footer a { color:var(--blue); }
+  @media (max-width:720px) { .item, .item.tall { grid-template-columns:1fr; } .item img { height:auto; } }
 </style>
 </head>
 <body>
-<main>
-  <h1>Тут буде проєкт</h1>
-  <p>Завантажте файли свого застосунку в репозиторій — і ця сторінка заміниться на нього. Інструкція — у README репозиторію.</p>
+<header class="wrap">
+  <a class="back" href="https://kmit-khpi.github.io/">← Усі посилання ШІ-лабораторії</a><br>
+  <span class="tag">Напрям 2 · ШІ-дизайн</span>
+  <h1>Мерч і обкладинки КМІТ, створені в Gemini</h1>
+  <p class="sub">Кожне зображення зроблено одним промптом у Gemini (студентська підписка Google AI) за ~30 секунд. Промпт можна скопіювати, змінити й отримати свій варіант.</p>
+  <p class="note"><b>Це макети, а не готові файли для друку.</b> Для друку дизайн з макета перемальовують у векторі (наприклад, у Figma чи Inkscape) — це наступний крок завдання.</p>
+</header>
+
+<main class="wrap">
+
+<article class="item">
+  <img src="img/chashka.jpg" alt="Біла чашка з лінійною ілюстрацією пуансона, заготовки й матриці, написом КМІТ і хештегом #КМІТ_ХПІ на дерев’яному столі поруч із зошитом" loading="lazy">
+  <div class="body">
+    <h2>Чашка</h2>
+    <span class="meta">Gemini · фотореалістичний макет</span>
+    <pre class="prompt" id="p1">Створи зображення: фотореалістичний макет білої керамічної чашки з дизайном для студентської спільноти кафедри КМІТ. На чашці — мінімалістична лінійна ілюстрація: пуансон витягує циліндричний стакан з плоскої круглої заготовки, під нею великий напис «КМІТ» і нижче дрібніше «#КМІТ_ХПІ». Кольори дизайну: темно-синій (#121826) і помаранчевий (#F28C28). Чашка стоїть на світлому дерев’яному столі поруч із зошитом, м’яке денне світло. Усі написи — українською кирилицею без помилок, жодних інших текстів і логотипів.</pre>
+    <div class="row"><button class="btn" data-copy="p1">Копіювати промпт</button><a class="btn" href="img/chashka-full.jpg" download>Завантажити (2752×1536)</a></div>
+  </div>
+</article>
+
+<article class="item">
+  <img src="img/futbolka.jpg" alt="Темно-синя футболка з білою та помаранчевою лінійною ілюстрацією штампа, написом КМІТ і хештегом #КМІТ_ХПІ" loading="lazy">
+  <div class="body">
+    <h2>Футболка</h2>
+    <span class="meta">Gemini · той самий чат, «у тому ж стилі»</span>
+    <pre class="prompt" id="p2">Тепер у тому ж стилі створи зображення: фотореалістичний макет темно-синьої бавовняної футболки, яка лежить розправленою на світло-сірому фоні (вид зверху). На грудях — та сама лінійна ілюстрація пуансона, заготовки і матриці білими та помаранчевими лініями, під нею великий білий напис «КМІТ» і помаранчевий «#КМІТ_ХПІ». Усі написи — українською кирилицею без помилок, жодних інших текстів і логотипів.</pre>
+    <div class="row"><button class="btn" data-copy="p2">Копіювати промпт</button><a class="btn" href="img/futbolka-full.jpg" download>Завантажити (2752×1536)</a></div>
+  </div>
+</article>
+
+<article class="item tall">
+  <img src="img/oblozhka-reels.jpg" alt="Вертикальна обкладинка: напис «Як роблять банку?», алюмінієвий диск і банка зі стрілкою, плашка «Інженерія за 30 секунд», #КМІТ_ХПІ" loading="lazy">
+  <div class="body">
+    <h2>Обкладинка для Reels / TikTok</h2>
+    <span class="meta">Gemini · вертикальний формат 9:16 · серія «Інженерія за 30 секунд»</span>
+    <pre class="prompt" id="p3">Тепер створи вертикальне зображення 9:16 — обкладинку для відео в Instagram Reels і TikTok з серії «Інженерія за 30 секунд». Тема випуску: як виготовляють алюмінієву банку (холодне витягування з плоскої круглої заготовки). Композиція: зверху великий заголовок «Як роблять банку?», по центру — блискуча алюмінієва банка і поруч плоский круглий диск заготовки зі стрілкою від диска до банки, внизу плашка «Інженерія за 30 секунд» і дрібно «#КМІТ_ХПІ». Стиль: сучасний яскравий, темно-синій фон і помаранчеві акценти, текст добре читається на телефоні, без вогню і розжареного металу. Усі написи — українською без помилок, жодних інших текстів.</pre>
+    <p class="meta"><b>Що перевірили:</b> написи правильні. Попри прохання, ШІ додав декоративні іскри — для холодного витягування їх варто прибрати наступним промптом.</p>
+    <div class="row"><button class="btn" data-copy="p3">Копіювати промпт</button><a class="btn" href="img/oblozhka-reels-full.jpg" download>Завантажити (1536×2752)</a></div>
+  </div>
+</article>
+
+<section>
+  <h2 style="font-size:20px">Ваше завдання</h2>
+  <ol>
+    <li>Скопіюйте промпт і змініть: колір футболки, предмет (худі, блокнот, наліпка на ноутбук), тему обкладинки (ложка, ключ, автомобільний диск).</li>
+    <li>Перевірте написи — ШІ іноді плутає літери.</li>
+    <li>Найкращі варіанти — у тему «Результати» Telegram-групи: з них можна відібрати дизайн для конкурсу мерчу КМІТ.</li>
+  </ol>
+</section>
+
 </main>
+
+<footer class="wrap">
+  ШІ-лабораторія КМІТ НТУ «ХПІ» · зображення згенеровано в Gemini 8 жовтня 2026 р. · <a href="https://github.com/kmit-khpi/design-merch">репозиторій</a>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = document.getElementById(b.dataset.copy).textContent;
+      try { navigator.clipboard.writeText(t).then(function () { b.textContent = 'Скопійовано ✓'; setTimeout(function () { b.textContent = 'Копіювати промпт'; }, 1500); }); } catch (e) {}
+    });
+  });
+</script>
 </body>
 </html>
